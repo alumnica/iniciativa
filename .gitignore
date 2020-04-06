@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+
+# Django stuff:
+*.log
+.static_storage/
+.media/
+*.sqlite3
+.idea/
+.DS_Store
+
