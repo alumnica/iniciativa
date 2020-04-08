@@ -9,9 +9,10 @@ build/
 
 # Django stuff:
 *.log
-#static/
+.static_storage/
 .media/
 *.sqlite3
 .idea/
 .DS_Store
+.venv/
 
