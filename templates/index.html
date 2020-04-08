@@ -1,116 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    
-<!-- Latest compiled and minified CSS -->
-     <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8" />
 
-       <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
-      
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        
-
-    <title>{% block title %} Iniciativa Cuarentena {% endblock %}</title>
-
+  <title>{% block title %} Iniciativa Cuarentena {% endblock %}</title>
 </head>
 
 <body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: "------------------",
+        cookie: true,
+        xfbml: true,
+        version: "v6.0"
+      });
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '------------------',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v6.0'
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
     });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
+  </script>
 
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v6.0&appId=---------&autoLogAppEvents=1"></script>
 
-
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-
-
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-
-</script>
-
-
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v6.0&appId=---------&autoLogAppEvents=1"></script>
-
-<header>
-
+  <header>
     <nav>
-        <div class="nav-wrapper #ffffff white">
-          <a href="#" class="black-text">FORO INICIATIVA CUARENTENA</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">                
-             <li>
-
-                <fb:login-button 
-                  scope="public_profile,email"
-                  onlogin="checkLoginState();">
-                
-                </fb:login-button>
-            </li>
-
-          </ul>
-        </div>
-      </nav>
-
+      <div class="nav-wrapper #ffffff white">
+        <a href="#" class="black-text">FORO INICIATIVA CUARENTENA</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
+  </header>
 
-<main>
-  <div class="container">
-    <div class="video-container responsive-video">
+  <main>
+    <div class="container">
+      <div class="video-container responsive-video">
         <iframe width="853" height="480" src="https://www.youtube.com/embed/b3z7jrmVawY" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <h3>¿Qué problema te gustaría resolver en estos 40 días?</h3>
+
+      <div class="fb-comments" data-href="https://www.iniciativacuarentena.org/" data-width="100%" data-numposts="10"></div>
     </div>
-        
-    <h3>¿Qué problema te gustaría resolver en estos 40 días?</h2>
-    
-    
-    
-    <div class="fb-comments" data-href="https://www.iniciativacuarentena.org/" data-width="100%" data-numposts="10"></div>
-
-    
-  </div>      
-</main>
-  <footer class="page-footer #ffffff white">
-     <div class="footer-copyright N/A transparent black-text">
-        <div class="container">        
-            <span>Unidos hacemos más </span>
-            <span class="right">contacto@iniciativacuarentena.org</span>
-        
-        </div>
-      </div>      
-    </footer>
-
+  </main>
+  <footer class="page-footer white">
+    <div class="footer-copyright N/A transparent black-text">
+      <div class="container">
+        <span>Unidos hacemos más </span>
+        <span class="right">contacto@iniciativacuarentena.org</span>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
