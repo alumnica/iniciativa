@@ -9,7 +9,7 @@ build/
 
 # Django stuff:
 *.log
-.static_storage/
+#static/
 .media/
 *.sqlite3
 .idea/

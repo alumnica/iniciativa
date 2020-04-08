@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,6 +16,10 @@
             
       
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'js/utils.js'%}"></script>
+
+
         
 
     <title>{% block title %} Iniciativa Cuarentena {% endblock %}</title>
@@ -27,7 +31,7 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '------------------',
+      appId      : '791906151218334',
       cookie     : true,
       xfbml      : true,
       version    : 'v6.0'
@@ -62,7 +66,7 @@ function checkLoginState() {
 
 
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v6.0&appId=---------&autoLogAppEvents=1"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v6.0&appId=791906151218334&autoLogAppEvents=1"></script>
 
 <header>
 
@@ -80,9 +84,7 @@ function checkLoginState() {
             </li>
 
           </ul>
-        </div>
-      </nav>
-
+        </div>      
     </nav>
 </header>
 
