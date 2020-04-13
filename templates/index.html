@@ -3,16 +3,31 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
 
-  <!-- Latest compiled and minified CSS -->
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static '/img/favicon/apple-touch-icon.png' %}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/img/favicon/favicon-32x32.png' %}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/img/favicon/favicon-16x16.png' %}" />
+  <link rel="manifest" href="{% static '/img/favicon/site.webmanifest' %}" />
+  <link rel="mask-icon" href="{% static '/img/favicon/safari-pinned-tab.svg' %}" color="#2d89ef" />
+  <meta name="msapplication-TileColor" content="#2d89ef" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Metatags SEO-->
+  <meta name="description" content="¿Qué problema te gustaría resolver en estos 40 días? Ayúdanos a proponer soluciones a los principales problemas que sufre México." />
+  <meta name="keywords" content="Iniciativa, Cuarentena, México, Soluciones, Comunidad" />
+  <meta http-equiv="expires" content="432000" />
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="Spanish" />
   <!--Import Google Icon Font-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet" />
 
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+  <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -22,83 +37,40 @@
   <title>{% block title %} Iniciativa Cuarentena {% endblock %}</title>
 </head>
 
-<body>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId: "791906151218334",
-        cookie: true,
-        xfbml: true,
-        version: "v6.0"
-      });
-
-      FB.AppEvents.logPageView();
-    };
-
-    (function(d, s, id) {
-      var js,
-        fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {
-        return;
-      }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    })(document, "script", "facebook-jssdk");
-
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-
-    function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-    }
-  </script>
-
-
-
+<body class="d-flex flex-column justify-content-between h-100">
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v6.0&appId=791906151218334&autoLogAppEvents=1"></script>
+  <div id="page-content">
+    <div class="container-lg">
+      <header>
+        <div class="header d-flex justify-content-between align-items-end">
+          <a href="/" class="logo d-flex align-items-end">
+            <img src="{% static '/img/logo.svg' %}" alt="Iniciativa Cuarentena" />
+            <p>Iniciativa Cuarentena</p>
+          </a>
+          <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+      </fb:login-button> -->
 
-  <header>
-    <nav>
-      <div class="nav-wrapper #ffffff white">
-        <a href="#" class="black-text">FORO INICIATIVA CUARENTENA</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-            </fb:login-button>
-          </li>
-        </ul>
-      </div>
+          <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();"></div>
+        </div>
+      </header>
 
-    </nav>
-  </header>
-
-  <main>
-    <div class="container">
-      <div class="video-container responsive-video">
-        <iframe width="853" height="480" src="https://www.youtube.com/embed/b3z7jrmVawY" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <h3>¿Qué problema te gustaría resolver en estos 40 días?</h3>
-
-      <div class="fb-comments" data-href="https://www.iniciativacuarentena.org/" data-width="100%" data-numposts="10"></div>
+      <main>
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/b3z7jrmVawY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h1 class="text-center pregunta">
+              ¿Qué problema te gustaría resolver en estos 40 días?
+            </h1>
+            <div class="fb-comments" data-href="https://www.iniciativacuarentena.org/" data-width="100%" data-numposts="10"></div>
+          </div>
+        </div>
+      </main>
     </div>
-  </main>
-
-  <footer class="page-footer white">
-    <div class="footer-copyright N/A transparent black-text">
-      <div class="container">
-        <span>Unidos hacemos más </span>
-        <span class="right">contacto@iniciativacuarentena.org</span>
-      </div>
-    </div>
-  </footer>
-
+  </div>
+  <script src="{%static 'js/utils.js'%}" charset="utf-8"></script>
 </body>
 
 </html>

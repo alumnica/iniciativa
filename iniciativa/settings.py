@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # 'livereload',
     'django.contrib.staticfiles',
     'iniciativa'
 ]
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'livereload.middleware.LiveReloadScript'
 ]
 
 ROOT_URLCONF = 'iniciativa.urls'
@@ -118,5 +120,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = 'static' 
+STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
